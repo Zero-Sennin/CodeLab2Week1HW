@@ -4,16 +4,22 @@ using System.Collections;
 public class SpawnColor : MonoBehaviour {
 
     public Sprite[] sprites;
+    public float spawnInterval = 1f;
+    float timer;
 
 	// Use this for initialization
 	void Start () {
-
-        InvokeRepeating("Spawn", 1f, 1f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+        timer += Time.deltaTime;
+
+        if (timer >= spawnInterval)
+        {
+            Spawn();
+            timer = 0f;
+        }
 	}
 
     void Spawn()
