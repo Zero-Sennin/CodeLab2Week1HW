@@ -9,6 +9,7 @@ public class GetColor : MonoBehaviour {
     {
         if(Camera.main.WorldToViewportPoint(transform.position).y < -0.25f)
         {
+            GameObject.Find("GameManager").GetComponent<GameManager>().MissedChains += 1;
             Destroy(gameObject);
         }
     }

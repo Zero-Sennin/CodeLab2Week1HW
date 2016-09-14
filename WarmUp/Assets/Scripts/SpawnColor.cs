@@ -22,6 +22,9 @@ public class SpawnColor : MonoBehaviour {
         }
 	}
 
+    /// <summary>
+    /// Create a new colored orb and set its position and color.
+    /// </summary>
     void Spawn()
     {
         GameObject sprite = Instantiate(Resources.Load("Prefabs/Color") as GameObject);
